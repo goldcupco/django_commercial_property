@@ -1,5 +1,5 @@
 # django_commercial_property
-Step 1: Project Setup
+# Step 1: Project Setup
 Create a Virtual Environment:-
 in bash :
 python -m venv myenv
@@ -25,33 +25,31 @@ Navigate to the Project Directory:
 cd commercial_project
 
 
-Step 2: App Creation
+# Step 2: App Creation
 Create a Django App:
 python manage.py startapp commercial_app
 
 
-Step 3: Model, Views, Templates, and Forms
-Models (models.py):
+# Step 3: Model, Views, Templates, and Forms
+Models (models.py) commercial_app/models.py :
 
-# commercial_app/models.py
 from django.db import models
 
 class CommercialProperty(models.Model):
-    # ... Your model fields ...
+     ... Your model fields ...
 
-Views (views.py):
-# commercial_app/views.py
+Views (views.py) commercial_app/views.py :
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.urls import reverse
 from .models import CommercialProperty
 from .forms import CommercialPropertyForm
 
-# ... Your views classes ...
+ ... Your views classes ...
 
 
-Forms (forms.py):
-# commercial_app/forms.py
+Forms (forms.py)commercial_app/forms.py :
 from django import forms
 from .models import CommercialProperty
 
@@ -60,10 +58,9 @@ class CommercialPropertyForm(forms.ModelForm):
         model = CommercialProperty
         fields = '__all__'
 
-Step 4: URL Configuration
-urls.py in commercial_app:
+# Step 4: URL Configuration
+urls.py in commercial_app commercial_app/urls.py :
 
-# commercial_app/urls.py
 from django.urls import path
 from .views import (
     PropertyListView,
@@ -82,8 +79,8 @@ urlpatterns = [
 ]
 
 
-Project-level urls.py:
-# commercial_project/urls.py
+Project-level urls.py  commercial_project/urls.py :
+
 from django.contrib import admin
 from django.urls import path, include
 
@@ -93,17 +90,15 @@ urlpatterns = [
 ]
 
 
-
-Step 5: Database Migration
+# Step 5: Database Migration
 python manage.py makemigrations
 python manage.py migrate
 
-Step 6: Create Superuser
+# Step 6: Create Superuser
 python manage.py createsuperuser
 
-Step 7: Static and Media Configuration (if needed)
-# commercial_project/settings.py
-# Add the following for static and media configuration
+# Step 7: Static and Media Configuration (if needed)
+ commercial_project/settings.py ( Add the following for static and media configuration) :
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
@@ -111,11 +106,10 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
 
-Step 8: Templates
+# Step 8: Templates
 Create HTML templates in the commercial_app/templates/commercial_app/ directory, such as property_list.html, property_detail.html, property_form.html, and property_confirm_delete.html.
 
-Step 9: JSON Data (Sample)
-Create a JSON file with sample data:
+# Step 9: JSON Data (Sample) Create a JSON file with sample data:
 
 [
   {
@@ -139,11 +133,11 @@ Create a JSON file with sample data:
 ]
 
 
-Step 10: Pytest Tests
-Create test files in commercial_app/tests/:
+# Step 10: Pytest Tests
+Create test files in commercial_app/tests/
 
-test_views.py:
-# commercial_app/tests/test_views.py
+test_views.py  commercial_app/tests/test_views.py :
+
 from django.urls import reverse
 from pytest_django.asserts import assertTemplateUsed
 import pytest
@@ -165,8 +159,7 @@ def test_property_update_view(client):
 def test_property_delete_view(client):
     # ... Your test code ...
 
-test_forms.py:
-# commercial_app/tests/test_forms.py
+test_forms.py  commercial_app/tests/test_forms.py :
 import pytest
 from .forms import CommercialPropertyForm
 
@@ -180,8 +173,7 @@ def test_commercial_property_form_invalid():
 
 
 
-test_models.py:
-# commercial_app/tests/test_models.py
+test_models.py commercial_app/tests/test_models.py :
 import pytest
 from .models import CommercialProperty
 
@@ -189,12 +181,12 @@ from .models import CommercialProperty
 def test_commercial_property_model():
     # ... Your test code ...
 
-Step 11: Run Pytest
+# Step 11: Run Pytest
 
 pytest commercial_app/tests
 
 
-Step 12: Run Development Server
+# Step 12: Run Development Server
 
 python manage.py runserver
 
