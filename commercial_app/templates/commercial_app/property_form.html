@@ -1,0 +1,16 @@
+<!-- templates/commercial_app/property_form.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Form</title>
+</head>
+<body>
+    <h1>Property Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

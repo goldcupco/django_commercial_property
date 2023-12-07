@@ -1,0 +1,16 @@
+<!-- commercial_app/templates/commercial_app/property_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property List</title>
+</head>
+<body>
+    <h1>Property List</h1>
+    {% for property in properties %}
+        <p>{{ property.address01 }} - {{ property.building_type }}</p>
+    {% endfor %}
+</body>
+</html>

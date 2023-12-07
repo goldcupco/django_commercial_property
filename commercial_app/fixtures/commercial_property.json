@@ -1,0 +1,44 @@
+[
+    {
+      "model": "commercial_app.commercialproperty",
+      "pk": 1,
+      "fields": {
+        "address01": "123 Main St",
+        "building_type": "office",
+        "ownership": "freehold",
+        "lot_size": 500,
+        "building_size": 300,
+        "price_per_square_meter": 2000,
+        "total_asking_price": 600000,
+        "total_price_offered": 550000,
+        "total_price_agreed": 560000,
+        "deal_status": "pending",
+        "listing_date": "2023-12-07",
+        "listing_agent_name": "John Doe",
+        "listing_agent_phone": "123-456-7890",
+        "description": "A modern office building",
+        "deal_comments": "Good deal!"
+      }
+    },
+    {
+      "model": "commercial_app.commercialproperty",
+      "pk": 2,
+      "fields": {
+        "address01": "456 Oak St",
+        "building_type": "industrial",
+        "ownership": "leasehold",
+        "lot_size": 1000,
+        "building_size": 800,
+        "price_per_square_meter": 1500,
+        "total_asking_price": 1200000,
+        "total_price_offered": 1100000,
+        "total_price_agreed": 1120000,
+        "deal_status": "closed",
+        "listing_date": "2023-12-10",
+        "listing_agent_name": "Jane Smith",
+        "listing_agent_phone": "987-654-3210",
+        "description": "An industrial warehouse",
+        "deal_comments": "Successful transaction"
+      }
+    }
+]
